@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Share OTP codes in the easy way">
+    <title>OTP Generator</title>
+    <script src="https://kit.fontawesome.com/2fc07cb02e.js" crossorigin="anonymous"></script>
+    <script src="sha.js"></script>
+    <script src="otp.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body class="container">
+    <div class="container">
+        <div class="row justify-content-md-center mt-4 mb-4">
+            <div class="col-md-6 col">
+                <h1>OTP Generator</h1>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-6 col">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="code" id="secretCode" value=""
+                        placeholder="Modify me...">
+                    <div class="input-group-append">
+                        <button name="generar" class="btn btn-secondary" onclick="setSecret()" id="generate">Generate <i
+                                class="fas fa-sync ml-2"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-4 justify-content-md-center">
+            <div class="col-md-6 col">
+                <h1 class="display-3 text-center" style="font-family: monospace; letter-spacing: 10px;" id="otp">000000
+                </h1>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-6 col">
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" id="progress" style="width: 100%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 justify-content-md-center">
+            <div class="col-md-6 col text-center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Share</span>
+                    </div>
+                    <input type="text" class="form-control" id="link" onclick="copy(this)">
+                    <div class="input-group-append">
+                        <button class="input-group-text" onclick="copy(document.getElementById('link'))"><i
+                                class="far fa-clipboard"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-6 col text-center"><img class="rounded" width="200px" height="200px" id="QRCode" src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=200x200&chld=M|0&cht=qr&chl=otpauth://totp/OTPGenerator?secret=Hello"></div>
+        </div>
+        <div class="row mt-4 justify-content-md-center">
+            <div class="col-md-6 col-12">
+                <p style="text-align: center;"><a href="https://github.com/SirSerch/LutCreatorJs" target="_blank">Open the project in GitHub <i class="fab fa-github" aria-hidden="true"></i></a></p>
+            </div>
+            <div class="col-md-6 col-12">
+                <p style="text-align: center;"><i class="fas fa-terminal" aria-hidden="true"></i> Code with <i class="fas fa-heart" aria-hidden="true"></i> by <a href="https://github.com/SirSerch" target="_blank">SirSerch</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+
+</html>
